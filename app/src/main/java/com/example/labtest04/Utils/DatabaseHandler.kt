@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.labtest04.Model.ToDoModel
 
-class DatabaseHandler private constructor(context: Context) :
+class DatabaseHandler(context: Context) :
     SQLiteOpenHelper(context, NAME, null, VERSION) {
     private var db: SQLiteDatabase? = null
     override fun onCreate(db: SQLiteDatabase) {
