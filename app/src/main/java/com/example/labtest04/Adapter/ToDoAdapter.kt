@@ -1,5 +1,6 @@
 package com.example.labtest04.Adapter
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +18,7 @@ import com.example.labtest04.Utils.DatabaseHandler
 //    private var todoList: List<ToDoModel>? = null
 class ToDoAdapter(db: DatabaseHandler, activity: MainActivity) :
     RecyclerView.Adapter<ToDoAdapter.ViewHolder?>() {
-    private var todoList: List<ToDoModel>? = null
+    private var todoList: MutableList<ToDoModel>? = null
     private val db: DatabaseHandler
     private val activity: MainActivity
 
@@ -53,19 +54,51 @@ class ToDoAdapter(db: DatabaseHandler, activity: MainActivity) :
         return n != 0
     }
 
-    fun setTasks(todoList: List<ToDoModel>?) {
+    fun getContext(): Context? {
+        return activity
+    }
+
+//    fun setTasks(todoList: List<ToDoModel>?) {
+//        this.todoList = todoList
+//        notifyDataSetChanged()
+//    }
+
+    fun setTasks(todoList: MutableList<ToDoModel>?) {
         this.todoList = todoList
         notifyDataSetChanged()
     }
 
+    //delete function
+    fun deleteItem(position: Int) {
+        val item = todoList?.get(position)
+        item?.let {
+            db.deleteTask(it.id)
+            todoList?.removeAt(position)
+            notifyItemRemoved(position)
+        }
+    }
+
+    //update function
+//    fun editItem(position: Int) {
+//        val item = todoList!![position]
+//        val bundle = Bundle()
+//        bundle.putInt("id", item.id)
+//        bundle.putString("task", item.task)
+//        val fragment = AddNewTask()
+//        fragment.arguments = bundle
+//        fragment.show(activity.supportFragmentManager, AddNewTask.TAG)
+//    }
+
     fun editItem(position: Int) {
-        val item = todoList!![position]
-        val bundle = Bundle()
-        bundle.putInt("id", item.id)
-        bundle.putString("task", item.task)
-        val fragment = AddNewTask()
-        fragment.arguments = bundle
-        fragment.show(activity.supportFragmentManager, AddNewTask.TAG)
+        val item = todoList?.get(position)
+        item?.let {
+            val bundle = Bundle()
+            bundle.putInt("id", it.id)
+            bundle.putString("task", it.task)
+            val fragment = AddNewTask()
+            fragment.arguments = bundle
+            fragment.show(activity.supportFragmentManager, AddNewTask.TAG)
+        }
     }
 
     class ViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
