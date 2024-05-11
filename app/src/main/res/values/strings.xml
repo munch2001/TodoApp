@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lab Test 04</string>
+    <string name="newTask">Enter new Task</string>
+    <string name="SaveBtn">Save</string>
 </resources>
