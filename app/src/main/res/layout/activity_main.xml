@@ -2,19 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="@drawable/back"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/tasksText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:text="Tasks"
+        android:fontFamily="serif-monospace"
+        android:text="@string/taskList"
         android:textColor="@android:color/black"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
-        android:textSize="32sp"/>
+        android:textSize="36sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
@@ -34,7 +37,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@android:color/holo_orange_dark"
+        android:backgroundTint="#A35CAF"
         android:src="@drawable/baseline_add" />
 
 

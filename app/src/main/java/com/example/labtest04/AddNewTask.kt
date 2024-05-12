@@ -49,7 +49,7 @@ class AddNewTask : BottomSheetDialogFragment() {
             val task = bundle.getString("task")
             newTaskText?.setText(task)
             if (!task.isNullOrEmpty()) {
-                newTaskSaveButton?.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark))
+                newTaskSaveButton?.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDarkest))
             }
         }
         newTaskText?.addTextChangedListener(object : TextWatcher {
@@ -60,7 +60,7 @@ class AddNewTask : BottomSheetDialogFragment() {
                     newTaskSaveButton?.setTextColor(Color.GRAY)
                 } else {
                     newTaskSaveButton?.isEnabled = true
-                    newTaskSaveButton?.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark))
+                    newTaskSaveButton?.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDarkest))
                 }
             }
 

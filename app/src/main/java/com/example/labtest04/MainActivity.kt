@@ -23,28 +23,6 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
 
     private lateinit var db: DatabaseHandler
 
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//        supportActionBar?.hide()
-//
-//        db = DatabaseHandler(this)
-//        db.openDatabase()
-//
-//        tasksRecyclerView = findViewById(R.id.taskRecyclerView)
-//        tasksRecyclerView.layoutManager = LinearLayoutManager(this)
-//        tasksAdapter = ToDoAdapter(db,this)
-//        tasksRecyclerView.adapter = tasksAdapter
-//
-//        // add new task button
-//        fab = findViewById(R.id.fab);
-//
-//        taskList = db.allTasks.toMutableList()
-//        Collections.reverse(taskList)
-//        tasksAdapter.setTasks(taskList)
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@android:color/holo_orange_dark">
+    android:background="#E1A1EC">
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/todologo"
+        android:src="@drawable/tdlogo"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

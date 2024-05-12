@@ -60,7 +60,7 @@ class RecyclerItemTouchHelper(private val adapter: ToDoAdapter) :
             background = ColorDrawable(
                 ContextCompat.getColor(
                     adapter.getContext()!!,
-                    R.color.colorPrimaryDark
+                    R.color.colorPrimaryDarkest
                 )
             )
         } else {
