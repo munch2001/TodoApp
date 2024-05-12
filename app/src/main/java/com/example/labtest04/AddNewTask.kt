@@ -88,7 +88,6 @@ class AddNewTask : BottomSheetDialogFragment() {
         }
     }
 
-
     //handle dialog dismiss
     override fun onDismiss(dialog: DialogInterface) {
         val activity: Activity? = activity

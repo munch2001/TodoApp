@@ -13,9 +13,6 @@ import com.example.labtest04.Model.ToDoModel
 import com.example.labtest04.R
 import com.example.labtest04.Utils.DatabaseHandler
 
-
-//class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainActivity) : RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
-//    private var todoList: List<ToDoModel>? = null
 class ToDoAdapter(db: DatabaseHandler, activity: MainActivity) :
     RecyclerView.Adapter<ToDoAdapter.ViewHolder?>() {
     private var todoList: MutableList<ToDoModel>? = null
@@ -58,11 +55,6 @@ class ToDoAdapter(db: DatabaseHandler, activity: MainActivity) :
         return activity
     }
 
-//    fun setTasks(todoList: List<ToDoModel>?) {
-//        this.todoList = todoList
-//        notifyDataSetChanged()
-//    }
-
     fun setTasks(todoList: MutableList<ToDoModel>?) {
         this.todoList = todoList
         notifyDataSetChanged()
@@ -77,17 +69,6 @@ class ToDoAdapter(db: DatabaseHandler, activity: MainActivity) :
             notifyItemRemoved(position)
         }
     }
-
-    //update function
-//    fun editItem(position: Int) {
-//        val item = todoList!![position]
-//        val bundle = Bundle()
-//        bundle.putInt("id", item.id)
-//        bundle.putString("task", item.task)
-//        val fragment = AddNewTask()
-//        fragment.arguments = bundle
-//        fragment.show(activity.supportFragmentManager, AddNewTask.TAG)
-//    }
 
     fun editItem(position: Int) {
         val item = todoList?.get(position)
