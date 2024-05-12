@@ -20,6 +20,7 @@ class RecyclerItemTouchHelper(private val adapter: ToDoAdapter) :
         return false
     }
 
+    //swipe functionality to update and delete
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         val position = viewHolder.adapterPosition
         if (direction == ItemTouchHelper.LEFT) {
@@ -41,6 +42,7 @@ class RecyclerItemTouchHelper(private val adapter: ToDoAdapter) :
         }
     }
 
+    //drawing icons to update and delete
     override fun onChildDraw(
         c: Canvas,
         recyclerView: RecyclerView,
@@ -80,7 +82,7 @@ class RecyclerItemTouchHelper(private val adapter: ToDoAdapter) :
                 itemView.left, itemView.top,
                 itemView.left + dX.toInt() + backgroundCornerOffset, itemView.bottom
             )
-        } else if (dX < 0) {
+        } else if (dX < 0) { //swiping to the left
             val iconLeft = itemView.right - iconMargin - icon.intrinsicWidth
             val iconRight = itemView.right - iconMargin
             icon.setBounds(iconLeft, iconTop, iconRight, iconBottom)

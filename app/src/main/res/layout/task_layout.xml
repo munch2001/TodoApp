@@ -23,5 +23,5 @@
             android:textSize="16dp"
             android:paddingStart="8dp" />
     </RelativeLayout>
-    
+
 </androidx.cardview.widget.CardView>

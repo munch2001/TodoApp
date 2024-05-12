@@ -70,6 +70,7 @@ class ToDoAdapter(db: DatabaseHandler, activity: MainActivity) :
         }
     }
 
+    //update function
     fun editItem(position: Int) {
         val item = todoList?.get(position)
         item?.let {
