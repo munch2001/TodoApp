@@ -21,11 +21,14 @@ class AddNewTask : BottomSheetDialogFragment() {
     private var newTaskText: EditText? = null
     private var newTaskSaveButton: Button? = null
     private var db: DatabaseHandler? = null
+
+    //set dialog style
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL, R.style.DialogStyle)
     }
 
+    //Create the view
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,6 +39,7 @@ class AddNewTask : BottomSheetDialogFragment() {
         return view
     }
 
+    //handling text changes and save the task
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         newTaskText = requireView().findViewById(R.id.newTaskText)
@@ -85,6 +89,7 @@ class AddNewTask : BottomSheetDialogFragment() {
     }
 
 
+    //handle dialog dismiss
     override fun onDismiss(dialog: DialogInterface) {
         val activity: Activity? = activity
         if (activity is DialogCloseListener) {
@@ -94,6 +99,7 @@ class AddNewTask : BottomSheetDialogFragment() {
 
     companion object {
         const val TAG = "ActionBottomDialog"
+
         fun newInstance(): AddNewTask {
             return AddNewTask()
         }

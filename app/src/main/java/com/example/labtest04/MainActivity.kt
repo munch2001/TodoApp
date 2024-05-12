@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
         tasksRecyclerView = findViewById(R.id.taskRecyclerView)
         tasksRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Pass db and this as parameters to ToDoAdapter constructor
+        // Passing db and this as parameters to ToDoAdapter constructor
         tasksAdapter = ToDoAdapter(db, this)
         tasksRecyclerView.adapter = tasksAdapter
 
@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
         Collections.reverse(taskList)
         tasksAdapter.setTasks(taskList)
     }
-
 
     //implementing handleDialogClose
     override fun handleDialogClose(dialog: DialogInterface?) {
